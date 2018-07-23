@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  EffectImageMovement
 //
-//  Created by Shashank Panwar on 23/07/18.
+//  Created by Rahul Kumar on 23/07/18.
 //  Copyright © 2018 Rahul. All rights reserved.
 //
 

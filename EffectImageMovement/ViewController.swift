@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  EffectImageMovement
 //
-//  Created by Shashank Panwar on 23/07/18.
+//  Created by Rahul Kumar on 23/07/18.
 //  Copyright © 2018 Rahul. All rights reserved.
 //
 
@@ -12,12 +12,26 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        parallexEffect()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func parallexEffect() {
+        let min = CGFloat(-500)
+        let max = CGFloat(500)
+        
+        let xMotion = UIInterpolatingMotionEffect(keyPath: "layer.transform.translation.x", type: .tiltAlongHorizontalAxis)
+        xMotion.minimumRelativeValue = min
+        xMotion.maximumRelativeValue = max
+        
+        let yMotion = UIInterpolatingMotionEffect(keyPath: "layer.transform.translation.y", type: .tiltAlongVerticalAxis)
+        yMotion.minimumRelativeValue = min
+        yMotion.maximumRelativeValue = max
+        
+        let motionEffectGroup = UIMotionEffectGroup()
+        motionEffectGroup.motionEffects = [xMotion,yMotion]
+        
+        sceneImageView.addMotionEffect(motionEffectGroup)
     }
 
 
